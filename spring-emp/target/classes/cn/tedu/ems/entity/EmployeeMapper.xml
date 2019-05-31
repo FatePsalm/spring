@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.ems.dao.EmployeeDAO">
+
+	<select id="findByUsername" parameterType="int"  resultType="cn.tedu.ems.entity.Employee">
+		select * from t_emp where id=#{id}
+	</select>
+	<insert id="save" parameterType="cn.tedu.ems.entity.Employee">
+		insert into t_emp values(t_user_seq.nextval,#{name},#{salary},#{age})
+	</insert>
+	<update id="modify" parameterType="cn.tedu.ems.entity.Employee" >
+		update t_emp set name=#{name},salary=#{salary},age=#{age} where id=#{id}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete from t_emp where id=#{id}
+	</delete>
+	<select id="findAll"  resultType="cn.tedu.ems.entity.Employee">
+		select * from t_emp 
+	</select>
+</mapper>

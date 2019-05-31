@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day01</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>SSH</h1>
+<p>Spring MVC + Spring + MyBatis = SSM</p>
+<p>Struts2 + Spring + Hibernate = SSH</p>
+<p>SSH 支持两种配置使用方式:</p>
+<ol>
+<li>注解配置</li>
+<li>XML配置, 重点讲解</li>
+</ol>
+<h1>Struts 2</h1>
+<h2>什么是Struts2</h2>
+<p>Struts 架子</p>
+<p><img src="1.png" /></p>
+<p>Struts1 和 Struts2 有什么关系:</p>
+<p>答: 没有任何关系, 只有名字一样! 都使用了MVC设计模式</p>
+<p>什么是Struts2: 使用了MVC模式的一个WEB编程框架(架子)</p>
+<h2>使用Struts2</h2>
+<p>按照Struts2 的架构要求添加 MVC 组件, 即可使用Struts2.</p>
+<p><img src="2.png" /></p>
+<p>使用步骤:</p>
+<ol>
+<li>创建WEB项目, 导入Tomcat运行环境</li>
+<li>
+<p>导入Struts 2, pom.xml</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.struts&lt;/groupId&gt;
+  &lt;artifactId&gt;struts2-core&lt;/artifactId&gt;
+  &lt;version&gt;2.5.1&lt;/version&gt;
+&lt;/dependency&gt; 
+</code></pre>
+
+</li>
+<li>
+<p>配置Struts 2 主控制器, web.xml</p>
+<pre><code>&lt;filter&gt;
+    &lt;display-name&gt;StrutsPrepareAndExecuteFilter&lt;/display-name&gt;
+    &lt;filter-name&gt;StrutsPrepareAndExecuteFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;StrutsPrepareAndExecuteFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+</code></pre>
+
+</li>
+<li>
+<p>添加Struts2 配置文件: resources/struts.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- 从 struts-2.5.dtd 文件中复制 DOCTYPE --&gt;
+&lt;!DOCTYPE struts PUBLIC
+    &quot;-//Apache Software Foundation//DTD Struts Configuration 2.5//EN&quot;
+    &quot;http://struts.apache.org/dtds/struts-2.5.dtd&quot;&gt;
+&lt;struts&gt;
+
+&lt;/struts&gt;
+</code></pre>
+
+<blockquote>
+<p>注意:文件名一定是struts.xml.</p>
+</blockquote>
+</li>
+<li>
+<p>部署测试...</p>
+</li>
+</ol>
+<h2>Hello World</h2>
+<ol>
+<li>
+<p>开发控制器类 DemoAction</p>
+<pre><code>/**
+ * Struts 2 的子控制器 
+ */
+public class DemoAction {
+
+    //控制器中, 处理Web请求的方法
+    //默认情况下方法名为 execute
+    //方法的返回值是 字符串,值是目标视图的名称
+    public String execute(){
+        //调用业务模型, 调用业务层...
+        System.out.println(&quot;Hello World!&quot;); 
+        return &quot;success&quot;; //反馈给用户的视图名
+    }
+}
+</code></pre>
+
+</li>
+<li>
+<p>开发JSP视图:  /WEB-INF/jsp/demo.jsp</p>
+<pre><code>&lt;%@page contentType=&quot;text/html; charset=utf-8&quot;
+   pageEncoding=&quot;utf-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body &gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;!-- /WEB-INF/jsp/demo.jsp --&gt;  
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml</p>
+<pre><code>&lt;!-- 用于定义&quot;包&quot;, 就是定义第一层WEB路径 --&gt;
+&lt;!-- extends=&quot;struts-default&quot; 自动继承了
+struts-default.xml 中定义环境信息 --&gt;
+&lt;package namespace=&quot;/demo&quot; name=&quot;demo&quot;
+    extends=&quot;struts-default&quot;&gt; 
+    &lt;!-- 在package中定义url与控制器和视图对应关系 
+        哪个URL被哪个控制器处理, 返回结果映射到
+        哪个JSP视图 --&gt;
+    &lt;!-- 请求url: demo/hello.action 
+        由DemoAction的execute方法处理URL--&gt;
+    &lt;action name=&quot;hello&quot; 
+        class=&quot;cn.tedu.ssh1.action.DemoAction&quot;&gt;
+        &lt;!-- result 用于约定 控制器返回结果
+        和视图的对应关系: success对应demo.jsp--&gt;
+        &lt;result name=&quot;success&quot;&gt;
+            /WEB-INF/jsp/demo.jsp
+        &lt;/result&gt;
+    &lt;/action&gt;
+&lt;/package&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试:</p>
+<pre><code>http://localhost:8080/ssh1/demo/hello.action 
+</code></pre>
+
+<blockquote>
+<p>Struts 2 的默认请求都以 .action 为结尾</p>
+</blockquote>
+</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

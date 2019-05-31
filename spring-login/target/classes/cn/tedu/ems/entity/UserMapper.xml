@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.ems.dao.UserDAO">
+<!-- id属性:要求唯一
+	 parameterType属性:参数类型(要写类的完整的名字)
+ -->
+	
+	<select id="findByUsername" parameterType="java.lang.String"  resultType="cn.tedu.ems.entity.User">
+		select id id,username username,password pwd,name name,gender gender from t_user where username=#{username}
+	</select>
+	<select id="findAll"   resultType="cn.tedu.ems.entity.User">
+		select id,username,password pwd,name,gender from t_user
+	</select>
+	
+	<!-- 
+	<select id="findById3" parameterType="int" resultType="entity.Emp">
+		select id empNo,name ename,salary salary,age age from t_emp where id=#{id}
+	</select>
+	 -->
+	
+</mapper>

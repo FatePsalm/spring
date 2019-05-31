@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.ems.dao.UserDAO">
+
+	<select id="findByUsername" parameterType="java.lang.String"  resultType="cn.tedu.ems.entity.User">
+		select * from t_user where username=#{username}
+	</select>
+	<insert id="save" parameterType="cn.tedu.ems.entity.User">
+		insert into t_user values(t_user_seq.nextval,#{username},#{password},#{name},#{gender})
+	</insert>
+	<update id="modify" parameterType="cn.tedu.ems.entity.User" >
+		update t_user set username=#{username},password=#{password},name=#{name},gender=#{gender} where id=#{id}
+	</update>
+	<select id="findAll"  resultType="cn.tedu.ems.entity.User">
+		select * from t_user 
+	</select>
+</mapper>
